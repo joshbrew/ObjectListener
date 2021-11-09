@@ -3,6 +3,9 @@
 Customizable event listener system for arbitrary objects. It's quite performant
 and we use it for state management (see StateManager.js)
 
+`npm i objectlisteners`
+
+
 ```
 //Example:
 let events = new ObjectListener();
