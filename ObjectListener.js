@@ -668,3 +668,4 @@ if(JSON.stringifyWithCircularRefs === undefined) {
     })();
 }
 
+export default ObjectListener

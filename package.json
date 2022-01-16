@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Creates arbitrary event listeners that you can use to watch for changes in an object and fire event subscriptions ",
   "main": "ObjectListener.js",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
