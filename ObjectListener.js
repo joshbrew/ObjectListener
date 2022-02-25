@@ -484,21 +484,26 @@ if(JSON.stringifyFast === undefined) {
             var idx = parents.length - 1;
             if(parents[idx]){
                 var prev = parents[idx];
-                if (prev[key] === value || idx === 0) {
-                    path.push(key);
-                    parents.push(value.pushed);
-                } else {
-                    while (idx-- >= 0) {
-                    prev = parents[idx];
-                    if (prev[key] === value) {
-                        idx += 2;
-                        parents.length = idx;
-                        path.length = idx;
-                        --idx;
-                        parents[idx] = value;
-                        path[idx] = key;
-                        break;
-                    }
+                if(typeof prev === 'object') {
+                    if (prev[key] === value || idx === 0) {
+                        path.push(key);
+                        parents.push(value.pushed);
+                    } else {
+                        while (idx-- >= 0) {
+                            prev = parents[idx];
+                            if(typeof prev === 'object') {
+                                if (prev[key] === value) {
+                                    idx += 2;
+                                    parents.length = idx;
+                                    path.length = idx;
+                                    --idx;
+                                    parents[idx] = value;
+                                    path[idx] = key;
+                                    break;
+                                }
+                            }
+                            idx++;
+                        }
                     }
                 }
             }
