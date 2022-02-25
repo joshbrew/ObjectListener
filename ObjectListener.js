@@ -502,7 +502,7 @@ if(JSON.stringifyFast === undefined) {
                                     break;
                                 }
                             }
-                            idx++;
+                            idx--;
                         }
                     }
                 }
